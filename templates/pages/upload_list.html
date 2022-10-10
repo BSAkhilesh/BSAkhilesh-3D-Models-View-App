@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS_files/Upload_list.css' %}">
+    <title>Fabrik | Submitted</title>
+    <link rel="icon" href="{% static 'Media/Images/logo.png' %}" type="image/icon">
+</head>
+<body>
+   
+    <div>
+        <nav class="nav">
+      
+            <label class="tital">Fabrik 3d Models</label>
+            
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="card">
+          <h3>submitted successfully</h3>
+          <div class="drop_box">
+            
+                <header>
+                  <h4>Go to Back</h4>
+                </header>
+                <div class="box">
+                <div class="list" class="btn btn-primary">
+                    <a href= "{% url 'Home' %}" >Home Page</a>
+                <div class="upload" class="btn btn-primary">
+                    <a href="{% url 'list' %}">List 3D Models</a> 
+                </div>
+                </div>
+                </div>
+                
+            
+          </div>
+          </div>
+        </div>
+
+</body>
+</html>
+

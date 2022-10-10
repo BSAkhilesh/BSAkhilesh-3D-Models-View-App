@@ -1,0 +1,43 @@
+
+  
+   *{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+ 
+ }
+
+
+.img-thumbnail{
+    height: 200px;
+    display: flex;
+    justify-content:flex-start;
+    
+}
+
+  nav{
+    top: 0px;
+    
+    background: linear-gradient(to left, #1e0b2b, #943a7a ,#1e0b2b );
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    
+    align-items: center;
+   
+    position: sticky;
+
+  
+    }
+    .tital{
+    font-family: SONGER Condensed;
+    color: #fff;
+    font-size: 35px;  
+    line-height: 50px;
+    padding: 0 100px;
+    font-weight: bold;
+    }
+
+  

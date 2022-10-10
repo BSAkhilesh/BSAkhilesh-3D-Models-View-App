@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fabrik | Model_04</title>
+    <link rel="icon" href="{% static 'Media/Images/logo.png' %}" type="image/icon">
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    
+
+    <style>
+      body {
+        margin: 0; 
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+      justify-content: right;
+        
+      }
+  </style>
+  
+  </head>
+
+  <body>
+
+    <div id="container"></div>
+
+    <script type="module">
+      import * as THREE from "https://unpkg.com/three@0.124.0/build/three.module.js";
+      import { OrbitControls } from "https://unpkg.com/three@0.124.0/examples/jsm/controls/OrbitControls.js";
+      import { GLTFLoader } from "https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js";
+      import { RGBELoader } from "https://unpkg.com/three@0.124.0/examples/jsm/loaders/RGBELoader.js";
+      
+      
+
+      let camera, scene, renderer;
+
+      init();
+      render();
+
+      function init() {
+        const container = document.createElement("dev");
+        document.body.appendChild(container);
+
+        camera = new THREE.PerspectiveCamera(
+          45,
+          window.innerWidth / window.innerHeight,
+          0.25,
+          20
+        );
+        camera.position.set(-1.8, 0.6, 2.7);
+
+        scene = new THREE.Scene();
+
+        new RGBELoader()
+          .setDataType(THREE.UnsignedByteType)
+          .setPath('/static/Media/texture/')
+          .load( 'country_club_8k.hdr' , function (texture) {
+            const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+            scene.background = envMap;
+            scene.environment = envMap;
+
+            texture.dispose();
+            pmremGenerator.dispose();
+
+            render();
+
+            // model
+            
+            const loader = new GLTFLoader()
+            .setPath("/static/Media/gltf/");
+            loader.load("P4.glb", function (gltf) {
+              scene.add(gltf.scene);
+
+              render();
+            });
+          });
+
+          
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 2;
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild(renderer.domElement);
+
+        const pmremGenerator = new THREE.PMREMGenerator(renderer);
+        pmremGenerator.compileEquirectangularShader();
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.addEventListener("change", render); // use if there is no animation loop
+        controls.minDistance = -1;
+        controls.maxDistance = 10;
+        controls.target.set(0, 0, -0.2);
+        controls.update();
+      }
+
+      //
+      const animate = function () {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+      };
+      function render() {
+        renderer.render(scene, camera);
+      }
+      window.onload = init;
+    </script>
+  
+  </body>
+</html>

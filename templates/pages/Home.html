@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fabrik 3D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'CSS_files/Home.css' %}">
+    <link rel="icon" href="{% static 'Media/Images/logo.png' %}" type="image/icon">
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Fabrik 3d Models</label>
+      <ul>
+         <li><a href="https://github.com/BSAkhilesh/3D-Models-View-App" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <div class="videoBG">
+
+      <img src="{% static 'Media/Images/marques-dans-le-metaverse.png' %}" id="bg" alt="">
+
+      <!-- <video  poster="poster.JPG" autoplay muted loop class="vid" >
+          <source src="/assets/videos/Vr, Virtual Realty, Glasses, Headset Stock Video Footage.gif" type="video/mp4">
+      </video>  -->
+   </div>
+  
+   <div class="box">
+      <div class="logo"><img src="{% static 'Media/Images/fabrik_logo.png' %}" alt="fabrik_logo">
+      
+          <div class="list">
+              <a href= "{% url 'list' %}" >List 3D Models</a>
+          <div class="upload">
+              <a href="{% url 'upload' %}">Upload 3D Models</a> 
+          </div>
+          </div>
+      </div>
+  </div>
+   
+  </body>
+</html>
