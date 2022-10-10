@@ -28,7 +28,7 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-q*1q_m)+09zd!&p$@p@rv^$wx-8hpi#ao06pv-2rj1&9r(*ucq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','fabrikviews.herokuapp.com']
 
