@@ -6,7 +6,7 @@ from .forms import AppfileForm
 
 # Create your views here.
 def Home_page(request):
-    return render(request, 'templates/pages/Home.html')
+    return render(request, 'pages/Home.html')
 
 def List(request):
     return render(request, 'pages/3D_list.html')
