@@ -176,4 +176,18 @@ LOGGING = {
 DEBUG_PROPAGATE_EXCEPTIONS = True
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
+-- Database: FABRIK_3D_360
+
+-- DROP DATABASE IF EXISTS "FABRIK_3D_360";
+
+CREATE DATABASE "FABRIK_3D_360"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
