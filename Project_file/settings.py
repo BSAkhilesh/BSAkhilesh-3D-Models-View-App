@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'Project_file.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME': 'FABRIK_3D_360',
-        'USER': 'postgres',
-        'PASSWORD':'Akhil123@',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'NAME': 'dfarlclcpeisjr',
+        'USER': 'qppyledncqbldi',
+        'PASSWORD':'e86bc5e378f65b7f2e6c64f308be4024b01f45525eb2cc18509085852d976291',
+        'HOST': 'ec2-54-91-223-99.compute-1.amazonaws.com',   # Or an IP Address that your DB is hosted on
         'PORT': '5432', 
     }
 }
