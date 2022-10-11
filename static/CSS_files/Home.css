@@ -171,11 +171,11 @@ section{
   background-size: cover;
   height: calc(100vh - 80px);
 }
-@media (max-width: 375px){
+@media (max-width: 400px){
   .videoBG{
    
     height: 375px;
-    width: 280px;
+    width:100%;
    
 }
 }
@@ -184,11 +184,12 @@ section{
       display: block;
       width: 250px;
       height: 250px;
-      margin-left: 70px;
+      margin-left: 75px;
       margin-top: 50%;
       align-items: center;
       justify-content:center;
       display: flex;
+      
     }
     .logo img{
       width: 180px;
@@ -205,5 +206,7 @@ section{
       padding: 5px 2px;
       
 }
+  
+   
 }
 

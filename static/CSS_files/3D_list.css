@@ -39,9 +39,10 @@
     padding: 0 100px;
     font-weight: bold;
     }
+
+ 
   @media (max-width: 600px){
     .tital{
       font-size: 25px;
     }
-   }
-  
+  }

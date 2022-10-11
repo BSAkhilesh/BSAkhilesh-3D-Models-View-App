@@ -121,6 +121,7 @@
       margin-top: 10%;
       justify-content:center;
   }
+
   @media (max-width: 600px){
     .tital{
       font-size: 25px;

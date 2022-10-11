@@ -40,6 +40,7 @@
     height: 325px;
     background-color: #ffffff;
     padding: 10px 30px 40px;
+    text-align: center;
   }
   
   .card h3 {
@@ -129,4 +130,3 @@
    
 }
 }
-  
