@@ -32,6 +32,19 @@
     justify-content: center;
     background-color: #fbfbfb;
   }
+  @media (max-width: 600px){
+  .tital{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px){
+
+  .container {
+ margin-top: 125px;
+   
+}
+}
   
   .card {
     border-radius: 10px;
